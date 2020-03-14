@@ -1,0 +1,17 @@
+resources:
+  - name: pal-tracker
+    type: git
+    check_every: 10s
+    source:
+      uri: https://github.com/udaykpanthagani/pal-tracker.git
+      branch: master
+
+jobs:
+ - name: build
+   plan:
+     - get: pal-tracker
+     - task: get-jar
+       config:
+         platform: linux
+         run:
+           path: ./gradlew build
