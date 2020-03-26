@@ -15,7 +15,7 @@ jobs:
         java-version: 11
     - name: Create test database
       run: |
-        sudo /etc/init.d/mysql<https://init.d/mysql> start
+        sudo /etc/init.d/mysql start
         mysql -uroot -proot < databases/tracker/create_databases.sql
         ./gradlew testMigrate
     - name: Build with Gradle
