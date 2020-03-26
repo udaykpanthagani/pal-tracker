@@ -19,7 +19,7 @@ jobs:
         mysql -uroot -proot < databases/tracker/create_databases.sql
         ./gradlew testMigrate
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --stacktrace
     - name: Publish artifact
       uses: actions/upload-artifact@v1
       with:
