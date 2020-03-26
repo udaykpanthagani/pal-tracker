@@ -47,7 +47,7 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
     public TimeEntry find(long timeEntryId) {
         TimeEntry entry;
         try {
-           entry = jdbcTemplate.queryForObject("SELECT * FROM TIME_ENTRIES WHERE id=" + timeEntryId, mapper);
+           entry = jdbcTemplate.queryForObject("SELECT * FROM time_entries WHERE id=" + timeEntryId, mapper);
         } catch (IncorrectResultSizeDataAccessException ex){
         entry = null;
     }
