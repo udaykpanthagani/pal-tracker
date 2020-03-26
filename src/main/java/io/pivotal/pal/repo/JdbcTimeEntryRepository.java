@@ -1,7 +1,6 @@
 package io.pivotal.pal.repo;
 
 import io.pivotal.pal.bean.TimeEntry;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,10 +10,6 @@ import org.springframework.jdbc.support.KeyHolder;
 import javax.sql.DataSource;
 import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
@@ -23,7 +18,6 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
     private JdbcTemplate jdbcTemplate;
 
-    @Autowired
     public JdbcTimeEntryRepository(DataSource dataSource){
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
