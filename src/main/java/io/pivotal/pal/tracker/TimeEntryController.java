@@ -86,6 +86,7 @@ public class TimeEntryController {
         timeEntryRepository.delete(timeEntryId);
         response = new ResponseEntity(HttpStatus.NO_CONTENT);
         actionCounter.increment();
+        timeEntrySummary.record(timeEntryRepository.list().size());
         return response;
     }
 }
